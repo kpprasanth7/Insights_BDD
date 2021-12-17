@@ -6,7 +6,7 @@ When user entered "Vasanth.palani" and "Signa@123"
 And clicked on the login button
 Then the user should be navigated to homepage
 
-@edge @chrome
+@edge
 Scenario: Verify if the Billing Efficiency option is getting navigated to Billing Efficiency page
 And the user clicks Insights and Navigate to Billing Efficiency page and verify if it lands in Billing Efficiency page
 And the user should be logged out from the signainsights
