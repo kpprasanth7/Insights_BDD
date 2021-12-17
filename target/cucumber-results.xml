@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="6" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="0.421">
+    <testcase classname="Validation of all the options under Insights_Performance" name="Verify if the Billing Efficiency option is getting navigated to Billing Efficiency page" time="0.093">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on landing page...............................................undefined
+When user entered "Vasanth.palani" and "Signa@123"..........................skipped
+And clicked on the login button.............................................skipped
+Then the user should be navigated to homepage...............................skipped
+And the user clicks Insights and Navigate to Billing Efficiency page and verify if it lands in Billing Efficiency page.skipped
+And the user should be logged out from the signainsights....................skipped
+]]></failure>
+    </testcase>
+    <testcase classname="Validation of all the options under Insights_Performance" name="Verify if the Invoice Life Cycle option is getting navigated to Invoice Life Cycle page" time="0.008">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on landing page...............................................undefined
+When user entered "Vasanth.palani" and "Signa@123"..........................skipped
+And clicked on the login button.............................................skipped
+Then the user should be navigated to homepage...............................skipped
+And the user clicks Insights and Navigate to Invoice Life Cycle page and verify if it lands in Invoice Life Cycle page.skipped
+And the user should be logged out from the signainsights....................skipped
+]]></failure>
+    </testcase>
+    <testcase classname="Validation of all the options under Insights_Performance" name="Verify if the Revenue By Location option is getting navigated to Revenue By Location page" time="0.009">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on landing page...............................................undefined
+When user entered "Vasanth.palani" and "Signa@123"..........................skipped
+And clicked on the login button.............................................skipped
+Then the user should be navigated to homepage...............................skipped
+And the user clicks Insights and Navigate to Revenue By Location page and verify if it lands in Revenue By Location page.skipped
+And the user should be logged out from the signainsights....................skipped
+]]></failure>
+    </testcase>
+    <testcase classname="Validation of all the options under Insights_Performance" name="Verify if the Technician Overview option is getting navigated to Technician Overview page" time="0.004">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on landing page...............................................undefined
+When user entered "Vasanth.palani" and "Signa@123"..........................skipped
+And clicked on the login button.............................................skipped
+Then the user should be navigated to homepage...............................skipped
+And the user clicks Insights and Navigate to Technician Overview page and verify if it lands in Technician Overview page.skipped
+And the user should be logged out from the signainsights....................skipped
+]]></failure>
+    </testcase>
+    <testcase classname="Validation of all the options under Insights_Performance" name="Verify if the Profit and Loss option is getting navigated to Profit and Loss page" time="0.005">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on landing page...............................................undefined
+When user entered "Vasanth.palani" and "Signa@123"..........................skipped
+And clicked on the login button.............................................skipped
+Then the user should be navigated to homepage...............................skipped
+And the user clicks Insights and Navigate to Profit and Loss page and verify if it lands in Profit and Loss page.skipped
+And the user should be logged out from the signainsights....................skipped
+]]></failure>
+    </testcase>
+    <testcase classname="Validation of all the options under Insights_Performance" name="Verify if the Battery and Warranty option is getting navigated to Battery and Warranty page" time="0.005">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on landing page...............................................undefined
+When user entered "Vasanth.palani" and "Signa@123"..........................skipped
+And clicked on the login button.............................................skipped
+Then the user should be navigated to homepage...............................skipped
+And the user clicks Insights and Navigate to Battery and Warranty page and verify if it lands in Battery and Warranty page.skipped
+And the user should be logged out from the signainsights....................skipped
+]]></failure>
+    </testcase>
+</testsuite>
