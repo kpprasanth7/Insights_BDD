@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Verify if the Billing Efficiency option is getting navigated to Billing Efficiency page
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 39.717 s - in Verify if the Billing Efficiency option is getting navigated to Billing Efficiency page
