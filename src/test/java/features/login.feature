@@ -3,7 +3,7 @@ Feature: SignaInsights Login
 Background:
 Given user is on landing page
 
-@edge
+@chrome
 Scenario Outline: Login with different credentials and logout
 When user entered "<Username>" and "<Password>"
 And clicked on the login button
@@ -15,7 +15,7 @@ Examples:
 |SignaInsightsDemo|Signa@123|
 |Vasanth.palani|Signa@123|
 
-@edge
+@chrome
 Scenario Outline: Login and navigate to users page and logout
 #Given user is on landing page
 When user entered "<Username>" and "<Password>"

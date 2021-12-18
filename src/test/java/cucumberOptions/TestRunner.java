@@ -10,7 +10,7 @@ import io.cucumber.junit.Cucumber;
 		features = {"src/test/java/features"}, 
 		glue={"stepDefinitions"},
 		stepNotifications = true,
-		tags = ("@edge or @chrome"),
+		tags = ("@edge"),
 		plugin = {"pretty", "html:target/cucumber.html"} ) 
 
 public class TestRunner {

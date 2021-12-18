@@ -11,7 +11,7 @@ Scenario: Verify if the Billing Efficiency option is getting navigated to Billin
 And the user clicks Insights and Navigate to Billing Efficiency page and verify if it lands in Billing Efficiency page
 And the user should be logged out from the signainsights
 
-@edge 
+@chrome 
 Scenario: Verify if the Invoice Life Cycle option is getting navigated to Invoice Life Cycle page
 And the user clicks Insights and Navigate to Invoice Life Cycle page and verify if it lands in Invoice Life Cycle page
 And the user should be logged out from the signainsights
