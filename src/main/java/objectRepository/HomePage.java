@@ -21,5 +21,9 @@ public class HomePage {
 	public static By profitandlosstitle = By.xpath("//div[@id='divNavTitle']//div//H4[text()='Profit and Loss']");
 	public static By batteryandwarrantybtn = By.xpath("(//*[text()=' Battery Warranty '])");
 	public static By batteryandwarrantytitle = By.xpath("//div[@id='divNavTitle']//div//H4[text()='Battery Warranty']");
-	
+	public static By organizationsbtn = By.xpath("(//*[@id='divFooter']//div//a[@href='/OrgManagement'])");
+	public static By organizationstitle = By.xpath("//div[@id='divNavTitle']//div//H4[text()='Organization Management']");
+	public static By reportregistratinbtn = By.xpath("//*[@id='divFooter']//div//a[@href='/ReportRegistration']");
+	public static By reportregistratintitle = By.xpath("//div[@id='divNavTitle']//div//H4[text()='Report Registration']");
+	public static By hometitle = By.xpath("//div[@id='divNavTitle']//div//H4[text()='Dashboard']");
 }

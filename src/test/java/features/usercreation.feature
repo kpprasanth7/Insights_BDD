@@ -3,7 +3,7 @@ Feature: User creation and deletion
 Background:
 Given user is on landing page
 
-@chrome
+@test
 Scenario: User is able to create new user id and able to delete
 When user entered "SignaInsightsDemo" and "Signa@123"
 And clicked on the login button

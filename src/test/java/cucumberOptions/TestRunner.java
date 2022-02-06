@@ -7,11 +7,11 @@ import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src/test/java/features"}, 
+		features = {"src/test/java/features/login.feature" ,"src/test/java/features/navigation.feature", "src/test/java/features/usercreation.feature" }, 
 		glue={"stepDefinitions"},
 		stepNotifications = true,
-		tags = ("@edge"),
-		plugin = {"pretty", "html:target/cucumber.html"} ) 
+		tags = ("@test"),
+		plugin = {"pretty", "html:target/cucumber.html", "junit:target/cukes.xml", "junit:target/cukes.json"} ) 
 
 public class TestRunner {
 

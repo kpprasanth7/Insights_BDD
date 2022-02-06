@@ -15,7 +15,7 @@ Examples:
 |SignaInsightsDemo|Signa@123|
 |Vasanth.palani|Signa@123|
 
-@chrome
+@edge
 Scenario Outline: Login and navigate to users page and logout
 #Given user is on landing page
 When user entered "<Username>" and "<Password>"

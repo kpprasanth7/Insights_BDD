@@ -49,7 +49,7 @@ public class StepDefinition {
 		System.setProperty("webdriver.edge.driver", ".\\driver\\msedgedriver.exe");
 		driver = new EdgeDriver();
 		actions = new Actions(driver);
-		w = new WebDriverWait(driver, Duration.ofSeconds(5));
+		w = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 	@Before("@chrome")
@@ -57,7 +57,16 @@ public class StepDefinition {
 		System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		actions = new Actions(driver);
-		w = new WebDriverWait(driver, Duration.ofSeconds(5));
+		w = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+	}
+	
+	@Before("@test")
+	public void open_testbrowser() {
+		System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		actions = new Actions(driver);
+		w = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 	}
 
@@ -75,109 +84,118 @@ public class StepDefinition {
 
 	@Then("^the user should be navigated to homepage$")
 	public void the_user_should_be_navigated_to_homepage() throws Throwable {
-		Thread.sleep(5000);
-		System.out.println("User is in Home Page");
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.hometitle));
 	}
 
 	@Then("^the user should be navigated to Users page$")
 	public void the_user_should_be_navigated_to_users_page() throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(HomePage.Usersbtn).click();
-		Thread.sleep(10000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.Usersbtn)).click();
 	}
 
 	@Then("^the user is able to delete the newly created userid$")
 	public void the_user_is_able_to_delete_the_newly_created_userid() throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(UsersPage.deletebtn).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(UsersPage.deletebtn)).click();
 		driver.switchTo().alert().accept();
+		Thread.sleep(5000);
 	}
 
 	@And("^clicked on the login button$")
 	public void clicked_on_the_login_button() throws Throwable {
 		driver.findElement(LoginPage.submitbtn).click();
+	
 	}
-
+	@And("^the user should be navigated to Organizations page$")
+    public void the_user_should_be_navigated_to_organizations_page() throws Throwable {
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.organizationsbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.organizationstitle)).isDisplayed();
+    }
+	
+	@And("^the user should be navigated to Report Registration page$")
+    public void the_user_should_be_navigated_to_report_registration_page() throws Throwable {
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.reportregistratinbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.reportregistratintitle)).isDisplayed();
+    }
 	@And("^the user should be logged out from the signainsights$")
 	public void the_user_should_be_logged_out_from_the_signainsights() throws Throwable {
 		Thread.sleep(5000);
-		driver.findElement(HomePage.profiledrpdwn).click();
-		Thread.sleep(5000);
-		driver.findElement(HomePage.logoutbtn).click();
+		w.until(ExpectedConditions.elementToBeClickable(HomePage.profiledrpdwn)).click();
+		w.until(ExpectedConditions.elementToBeClickable(HomePage.logoutbtn)).click();
 	}
 
 	@And("^the user clicks Insights and Navigate to Billing Efficiency page and verify if it lands in Billing Efficiency page$")
 	public void the_user_clicks_insights_and_navigate_to_billing_efficiency_page_and_verify_if_it_lands_in_billing_efficiency_page()
 			throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(HomePage.insightsbtn).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.insightsbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.performancebtn));
 		actions.moveToElement(driver.findElement(HomePage.performancebtn));
 		actions.perform();
 		driver.findElement(HomePage.billingefficiencybtn).click();
-		driver.findElement(HomePage.billingefficiencytitle).isDisplayed();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.billingefficiencytitle)).isDisplayed();
 	}
 
 	@And("^the user clicks Insights and Navigate to Invoice Life Cycle page and verify if it lands in Invoice Life Cycle page$")
 	public void the_user_clicks_insights_and_navigate_to_Invoice_Life_Cycle_page_and_verify_if_it_lands_in_Invoice_Life_Cycle_page()
 			throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(HomePage.insightsbtn).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.insightsbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.performancebtn));
 		actions.moveToElement(driver.findElement(HomePage.performancebtn));
 		actions.perform();
 		driver.findElement(HomePage.invoicelifecyclebtn).click();
-		Thread.sleep(5000);
-		driver.findElement(HomePage.invoicelifecycletitle).isDisplayed();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.invoicelifecycletitle)).isDisplayed();
 	}
 
 	@And("^the user clicks Insights and Navigate to Revenue By Location page and verify if it lands in Revenue By Location page$")
 	public void the_user_clicks_insights_and_navigate_to_revenue_by_location_page_and_verify_if_it_lands_in_revenue_by_location_page()
 			throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(HomePage.insightsbtn).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.insightsbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.performancebtn));
 		actions.moveToElement(driver.findElement(HomePage.performancebtn));
 		actions.perform();
 		driver.findElement(HomePage.revenuebylocationbtn).click();
-		driver.findElement(HomePage.revenuebylocationtitle).isDisplayed();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.revenuebylocationtitle)).isDisplayed();
 	}
 
 	@And("^the user clicks Insights and Navigate to Technician Overview page and verify if it lands in Technician Overview page$")
 	public void the_user_clicks_insights_and_navigate_to_technician_overview_page_and_verify_if_it_lands_in_technician_overview_page()
 			throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(HomePage.insightsbtn).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.insightsbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.performancebtn));
 		actions.moveToElement(driver.findElement(HomePage.performancebtn));
 		actions.perform();
 		driver.findElement(HomePage.technicianoverviewbtn).click();
-		driver.findElement(HomePage.technicianoverviewtitle).isDisplayed();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.technicianoverviewtitle)).isDisplayed();
 	}
 
 	@And("^the user clicks Insights and Navigate to Profit and Loss page and verify if it lands in Profit and Loss page$")
 	public void the_user_clicks_insights_and_navigate_to_profit_and_loss_page_and_verify_if_it_lands_in_profit_and_loss_page()
 			throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(HomePage.insightsbtn).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.insightsbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.performancebtn));
 		actions.moveToElement(driver.findElement(HomePage.performancebtn));
 		actions.perform();
 		driver.findElement(HomePage.profitandlossbtn).click();
-		driver.findElement(HomePage.profitandlosstitle).isDisplayed();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.profitandlosstitle)).isDisplayed();
 	}
 
 	@And("^the user clicks Insights and Navigate to Battery and Warranty page and verify if it lands in Battery and Warranty page$")
 	public void the_user_clicks_insights_and_navigate_to_battery_and_warranty_page_and_verify_if_it_lands_in_battery_and_warranty_page()
 			throws Throwable {
-		Thread.sleep(5000);
-		driver.findElement(HomePage.insightsbtn).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.insightsbtn)).click();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.performancebtn));
 		actions.moveToElement(driver.findElement(HomePage.performancebtn));
 		actions.perform();
 		driver.findElement(HomePage.batteryandwarrantybtn).click();
-		driver.findElement(HomePage.batteryandwarrantytitle).isDisplayed();
+		w.until(ExpectedConditions.presenceOfElementLocated(HomePage.batteryandwarrantytitle)).isDisplayed();
 	}
 
 	@And("^the user is able to enter all the details to create new user$")
@@ -197,11 +215,13 @@ public class StepDefinition {
 		orgselect.selectByValue("2005");
 		Select usertypeselect = new Select(driver.findElement(UsersPage.usertypeselect));
 		usertypeselect.selectByValue("2");
-		w.until(ExpectedConditions.elementToBeClickable(driver.findElement(UsersPage.dobdate)));
+		w.until(ExpectedConditions.elementToBeClickable(driver.findElement(UsersPage.dobdate))).clear();
 		driver.findElement(UsersPage.dobdate).sendKeys("12/08/2000");
 		driver.findElement(UsersPage.phonetxt).sendKeys("1235512344");
 		driver.findElement(UsersPage.savebtn).click();
 	}
+	
+	
 
 	@After
 	public void close_browser() throws Throwable {
